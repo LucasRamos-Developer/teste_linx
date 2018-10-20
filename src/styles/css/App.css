@@ -1,0 +1,19 @@
+.block {
+  display: block;
+}
+
+.line {
+  display: inline-block;
+  width: 100%;
+}
+
+.AppContainer {
+  width: 100%;
+  max-width: 1140px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/*# sourceMappingURL=App.css.map */

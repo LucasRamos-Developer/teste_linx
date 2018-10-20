@@ -1,0 +1,62 @@
+.ProductCard {
+  padding: 10px;
+}
+.ProductCard-link {
+  text-decoration: none;
+  box-shadow: 1px 2px 11px 0 rgba(120, 135, 182, 0.1);
+  background-color: #fff;
+  border: solid 1px #eff1f9;
+  transition: all 0.3s ease;
+  display: flex;
+  padding: 15px 20px 15px 20px;
+  flex-direction: column;
+}
+.ProductCard-link:hover {
+  transform: translateY(2px);
+  box-shadow: none;
+  color: #b70f15;
+}
+.ProductCard-image {
+  text-align: center;
+}
+.ProductCard-image > img {
+  display: inline-block;
+  max-width: 100%;
+}
+.ProductCard-details {
+  text-align: center;
+}
+.ProductCard-details_name {
+  margin-bottom: 5px;
+  font-size: 0.8rem;
+  color: #404040;
+  height: 32px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 10px;
+}
+.ProductCard-details_price {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 44px;
+}
+.ProductCard-details_price .old {
+  font-size: 0.9rem;
+  color: #747c81;
+  font-weight: normal;
+  text-align: center;
+  line-height: 1.36;
+}
+.ProductCard-details_price .sale {
+  font-size: 1.2rem;
+  color: #b70f15;
+  font-weight: bold;
+}
+.ProductCard-details_installment {
+  color: #000;
+  font-size: 0.8rem;
+  letter-spacing: -0.31px;
+}
+
+/*# sourceMappingURL=ProductCard.css.map */

@@ -1,0 +1,69 @@
+$text-disable: #747c81;
+$text-infor: #000;
+$text: #404040;
+$spotlight: #b70f15;
+
+.ProductCard {
+    padding: 10px;
+    &-link {
+        text-decoration: none;
+        box-shadow: 1px 2px 11px 0 rgba(120,135,182,.1);
+        background-color: #fff;
+        border: solid 1px #eff1f9;
+        transition: all .3s ease;
+        display: flex;
+        padding: 15px 20px 15px 20px;
+        flex-direction: column;
+        &:hover {
+            transform: translateY(2px);
+            box-shadow: none;
+            color: $spotlight;
+        }
+    }
+    &-image {
+        text-align: center;
+        > img {
+            display: inline-block;
+            max-width: 100%;
+           
+        }
+    }
+    &-details {
+        text-align: center;
+        &_name {
+            margin-bottom: 5px;
+            font-size: .8rem;
+            color: $text;
+            height: 32px;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 10px;
+        }
+        &_price {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            min-height: 44px;
+            .old {
+                font-size: .9rem;
+                color: $text-disable;
+                font-weight: normal;
+                text-align: center;
+                line-height: 1.36;
+            }
+            .sale {
+                font-size: 1.2rem;
+                color: $spotlight;
+                font-weight: bold;
+                
+            }
+            
+        }
+       
+        &_installment {
+            color: $text-infor;
+            font-size: .8rem;
+            letter-spacing: -0.31px;
+        }
+    }
+}
