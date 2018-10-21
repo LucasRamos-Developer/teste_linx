@@ -12,6 +12,7 @@
   flex-direction: column;
 }
 .ProductCard-link:hover {
+  border-color: #d0d0d0;
   transform: translateY(2px);
   box-shadow: none;
   color: #b70f15;
@@ -37,6 +38,7 @@
 }
 .ProductCard-details_price {
   align-items: center;
+  justify-content: flex-end;
   display: flex;
   flex-direction: column;
   min-height: 44px;

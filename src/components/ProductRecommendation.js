@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import ProductCard from './ProductCard';
 import Slider from "react-slick";
+//import ScriptCache from '../utility/ScriptCache';
+import Script from 'react-load-script';
 
 class ProductRecommendation extends Component {
     constructor () {
@@ -78,23 +80,23 @@ class ProductRecommendation extends Component {
         }
     }
 
-    componentDidMount () {
-/*         var header = new Headers({
-            'Content-Type': 'text/plain',
-            'X-Custom-Header': 'hello world'
-        });
-        fetch('http://roberval.chaordicsystems.com/challenge/challenge.json?callback=X')
-            .then(response => response.json())
-            .then(product => {
-                console.log('Product', product);
-                //this.setState();
-            }); */
+    handleScriptCreate () {
+        const self = this;
+        window.X = function (response) {
+            let data = response.data;
+            console.log(data);
+            self.setState({
+                product: data.reference.item,
+                recommendation: data.recommendation
+            });
+        }
     }
+
 
     render() {
         const slide_settings = {
             arrow: true,
-            dots: false,
+            dots: true,
             infinite: false,
             speed: 500,
             slidesToShow: 4,
@@ -108,15 +110,16 @@ class ProductRecommendation extends Component {
                         <div className="title">
                             <h2>Você visitou</h2>
                         </div>
-                        <ProductCard data={this.state.product}/>
+                        <ProductCard key={this.state.product.businessId} data={this.state.product}/>
                     </div>
-                    <div class="ProductRecommendation-slider">
+                    <div className="ProductRecommendation-slider">
                         <div className="title">
                             <h2>e talvez se interesse por: </h2>
                         </div>
                         <Slider {...slide_settings}>
-                            {this.state.recommendation.map(product => <ProductCard data={product}/>)}
+                            {this.state.recommendation.map(product => <ProductCard key={product.businessId} data={product}/>)}
                         </Slider>
+                        <Script url="http://roberval.chaordicsystems.com/challenge/challenge.json?callback=X" onCreate={this.handleScriptCreate.bind(this)} />
                     </div>
                 </div>
             </div>
