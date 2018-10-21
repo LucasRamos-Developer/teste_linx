@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import renderHTML from 'react-render-html';
 
 class ProductCard extends Component {
+
     renderOldPrice (price) {
         let html = '';
         if (price != null) {
